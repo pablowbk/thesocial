@@ -9,11 +9,14 @@ import logo from '../../public/logo-circ-light.svg';
 import { createOrGetUser } from "../../utils";
 import useAuthStore from "../../store/authStore";
 import { GoogleLogout } from "react-google-login";
+import { User } from "../../types";
 
 const NavBar = () => {
   const router = useRouter();
 
   const { userProfile, addUser, logoutUser } = useAuthStore();
+
+  const user: any = userProfile;
 
   return (
     <div className={'w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4'}>
@@ -30,7 +33,7 @@ const NavBar = () => {
         Search
       </div>
       <div>
-        {userProfile ? (
+        {user ? (
           <div className="flex gap-5 md:gap-10">
             <Link href={'/upload'}>
               <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2 rounded">
@@ -39,13 +42,13 @@ const NavBar = () => {
                 <span className="hidden md:block">Upload</span>
               </button>
             </Link>
-            {userProfile?.image && (
-              <Link href={`/profile/${userProfile?._id}`}>
+            {user?.image && (
+              <Link href={`/profile/${user?._id}`}>
                 <Image 
                   width={32}
                   height={32}
-                  src={userProfile?.image}
-                  alt={userProfile?.userName}
+                  src={user?.image}
+                  alt={user?.userName}
                   className="rounded-full cursor-pointer"
                 />
               </Link>
