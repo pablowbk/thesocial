@@ -39,13 +39,13 @@ const NavBar = () => {
                 <span className="hidden md:block">Upload</span>
               </button>
             </Link>
-            {userProfile.image && (
-              <Link href={`/profile/${userProfile._id}`}>
+            {userProfile?.image && (
+              <Link href={`/profile/${userProfile?._id}`}>
                 <Image 
                   width={32}
                   height={32}
-                  src={userProfile.image}
-                  alt={userProfile.userName}
+                  src={userProfile?.image}
+                  alt={userProfile?.userName}
                   className="rounded-full cursor-pointer"
                 />
               </Link>
