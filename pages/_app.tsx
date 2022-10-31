@@ -6,6 +6,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import NextNProgress from 'nextjs-progressbar';
 
 import '../styles/globals.css';
+import Head from 'next/head';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [isSSR, setIsSSR] = useState(true);
@@ -18,6 +19,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
+      <Head>
+        <title>TheSocial - FullStack web app</title>
+        <link rel="shortcut icon" href="/favicon.png"/>
+      </Head>
       <NextNProgress color="#FF008A" startPosition={0.3} stopDelayMs={200} height={5} showOnShallow={true} />
       <div className='xl:w-[1200px] m-auto overflow-hidden h-[100vh]'>
         <NavBar />
