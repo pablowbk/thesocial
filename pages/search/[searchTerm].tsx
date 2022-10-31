@@ -60,7 +60,7 @@ const SearchResult: React.FC<SearchProps> = ({ videos }) => {
         <div className='md:mt-16'>
           {filteredAccounts.length > 0 ? (
             filteredAccounts.map((user: User) => (
-              <Link href={`/profile/${user._id}`}>
+              <Link href={`/profile/${user._id}`} key={user._id}>
                 <div className='flex items-center gap-3 p-2 mb-2 font-semibold rounded border-b-2 border-gray-200 cursor-pointer'>
                   <div className=''>
                     <Image
