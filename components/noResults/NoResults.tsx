@@ -1,11 +1,12 @@
 import React from 'react'
 import { BiCommentDots } from 'react-icons/bi'
 import { MdOutlineVideocamOff } from 'react-icons/md';
+import { FiUsers } from 'react-icons/fi';
 
 
 interface NoResultsProps {
   text: string;
-  type: string;
+  type: 'videos' | 'comments' | 'accounts';
 }
 
 const NoResults: React.FC<NoResultsProps> = ({text, type}) => {
@@ -16,6 +17,7 @@ const NoResults: React.FC<NoResultsProps> = ({text, type}) => {
       <p className='text-6xl mb-2 text-gray-400'>
         { type === 'comments' && <BiCommentDots />}
         { type === 'videos' && <MdOutlineVideocamOff />}
+        { type === 'accounts' && <FiUsers />}
       </p>
       <p className='text-2xl'>{text}</p>
 

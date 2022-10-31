@@ -133,22 +133,20 @@ const Detail = ({postDetails}: DetailsProps) => {
         <div className='lg:mt-20 mt-10'>
           <div className='flex items-center gap-3 p-2 cursor-pointer font-semibold rounded'>
             <div className='ml-4 md:w-20 md:h-20 w-16 h-16 flex justify-center items-center'>
-              <Link href={'/'}>
-                <>
-                  {post.postedBy?.image && (
-                    <Image 
-                      width={62}
-                      height={62}
-                      src={post.postedBy?.image}
-                      alt={post.postedBy?.userName}
-                      className="rounded-full"
-                    />
-                  )}
-                </>
+              <Link href={`/profile/${post.postedBy?._id}`}>
+                {post.postedBy?.image && (
+                  <Image 
+                    width={62}
+                    height={62}
+                    src={post.postedBy?.image}
+                    alt={post.postedBy?.userName}
+                    className="rounded-full"
+                  />
+                )}
               </Link>
             </div>
             <div>
-              <Link href={'/'}>
+              <Link href={`/profile/${post.postedBy?._id}`}>
                 <div className='flex flex-col gap-2'>
                   <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
                     {post.postedBy?.userName}
