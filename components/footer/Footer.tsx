@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <div className='mt-6 hidden xl:block'>
       <List items={footerList1} />
-      <List items={footerList2} />
-      <List items={footerList3} />
+      {/* <List items={footerList2} />
+      <List items={footerList3} /> */}
 
       <p className='text-gray-400 text-sm mt-5'>{`Coded with keystrokes`}</p>
       
