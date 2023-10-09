@@ -1,0 +1,26 @@
+/*------------------------------------------------------------------
+[Media queries] 
+*/
+@mixin breakpoint($point) {
+  @if $point == xx-large {
+      @media only screen and (max-width: 1599px) {
+          @content;
+      }
+  } @else if $point == desktop {
+      @media only screen and (max-width: 1260px) {
+          @content;
+      }
+  } @else if $point == tablet {
+      @media only screen and (max-width: 1024px) {
+          @content;
+      }
+  } @else if $point == ipad {
+      @media only screen and (max-width: 768px) {
+          @content;
+      }
+  } @else if $point == mobile {
+      @media only screen and (max-width: 599px) {
+          @content;
+      }
+  }
+}
